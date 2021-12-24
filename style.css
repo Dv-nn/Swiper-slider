@@ -1,0 +1,299 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+
+:root {
+  --body-color: #2c2d2a;
+  --slider1-bg: #e7dfcf;
+  --slider2-bg: #b6d6c8;
+  --slider3-bg: #e9bf8b;
+  --slider4-bg: #e49f99;
+  --arrow-fill: #333231;
+}
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+img {
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+  color: var(--body-color);
+}
+h1,
+h2,
+h3 {
+  margin: 0;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  color: var(--body-color);
+  padding: 2rem;
+}
+
+.container {
+  position: relative;
+  max-width: 1200px;
+  width: 100%;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  scroll-behavior: smooth;
+  background-color: #e6decf;
+  padding: 0 30px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(44, 45, 42, 0.25);
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+/* Header  ----------------- */
+.logo {
+  display: flex;
+  width: 30px;
+}
+.logo span {
+  margin-left: 15px;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 37px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 15px;
+  border-bottom: 1px solid rgba(44, 45, 42, 0.25);
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: var(--slider1-bg);
+  z-index: 6;
+  margin: 20px 0;
+  padding-bottom: 4px;
+}
+.header-icon {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+.header-icon svg {
+  width: 22px;
+}
+.header-menu {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+.header-menu a {
+  padding-left: 10px;
+}
+.header-icons {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+.header-icons svg {
+  width: 18px;
+}
+.header-icons svg:not(:last-child) {
+  margin-right: 20px;
+}
+
+
+/* Slider  ------------------- */
+.mySwiper {
+	display: flex;
+	flex-grow: 1;
+	position: relative;
+}
+.swiper-slide {
+  opacity: 0 !important;
+  transition: 0.4s;
+}
+.swiper-slide-active {
+  opacity: 1 !important;
+}
+.swiper-slide .main-wrapper > *,
+.swiper-slide .main-content > * {
+	transform: translateY(-30px);
+	opacity: 0;
+	transition-duration: 0.8s;
+}
+.swiper-slide-active .main-wrapper > *,
+.swiper-slide-active .main-content > * {
+	transform: none;
+	opacity: 1;
+}
+.swiper-slide .cake-bg {
+	transition-duration: 0.6s;
+	opacity: 0;
+	object-position: 60%;
+}
+.swiper-slide-active .cake-bg {
+	opacity: 1;
+	transform: none;
+	object-position: 50%;
+}
+.swiper-slide .cake-img {
+	transition-duration: 0.8s;
+	transform: scale(1.2);
+	opacity: 0;
+}
+.swiper-slide-active .cake-img {
+	opacity: 1;
+	transform: scale(1.6);
+}
+[data-sld="1"] .container, [data-sld="1"] .header {
+		background-color: var(--slider2-bg);
+}
+
+[data-sld="2"] .container, [data-sld="2"] .header {
+  background-color: var(--slider3-bg);
+}
+
+[data-sld="3"] .container, [data-sld="3"] .header {
+  background-color: var(--slider4-bg);
+}
+
+
+.main {
+  position: relative;
+  margin: 30px;
+	display: flex;
+	justify-content: space-between;
+}
+.left-side {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	max-width: 350px;
+  margin-left: 50px;
+}
+.main-header {
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  transition-delay: 0.2s;
+}
+.main-title {
+  font-size: 100px;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-top: 10px;
+  transition-delay: 0.3s;
+}
+.main-subtitle {
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 1.1;
+  margin-top: 14px;
+  margin-bottom: 60px;
+  transition-delay: 0.4s;
+}
+.main-content__title {
+  text-transform: uppercase;
+  font-size: 26px;
+  margin-bottom: 14px;
+  transition-delay: 0.2s;
+}
+.main-content__subtitle {
+  text-transform: uppercase;
+  font-size: 14px;
+  margin-bottom: 24px;
+  transition-delay: 0.3s;
+}
+
+
+.center {
+  display: flex;
+	margin: 0 80px 56px 80px;
+	position: relative;
+	flex-shrink: 0;
+}
+.cake-bg {
+  width: 320px;
+  height: 450px;
+  object-fit: cover;
+  border-radius: 160px;
+}
+.cake-img {
+  position: absolute;
+  top: 29%;
+  right: 17%;
+  width: 200px;
+  transform: scale(1.6);
+}
+
+
+/* Button --------------- */
+.button-wrapper {
+  position: absolute;
+	right: 30px;
+	bottom: 20px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+  padding: 0 60px;
+  z-index: 1;
+}
+.swiper-button {
+  border: 1px solid var(--body-color);
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, var(--body-color) 40%, transparent 0%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  cursor: pointer;
+  transition: all 0.3s ease-out;
+}
+.swiper-button svg {
+  width: 28px;
+}
+.swiper-button + .swiper-button {
+  margin-left: 15px;
+}
+.swiper-button:hover {
+  background-color: var(--body-color);
+  background-position: left bottom;
+}
+.swiper-button:hover svg {
+  stroke: #fff;
+}
+.swiper-prev-button {
+    background: linear-gradient(to left, var(--body-color) 40%, transparent 0%);
+		background-size: 200% 100%;
+		background-position: left bottom;
+		transition: all 0.3s ease-out;
+}
+.swiper-prev-button svg {
+  transform: rotate(-180deg);
+}
+.swiper-prev-button:hover svg {
+  background-position: right bottom;
+}
+
+/* Pagination---------------- */
+.swipper-pagination {
+  position: absolute;
+  right: 30px;
+  width: auto;
+  
+  z-index: 2;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
